@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cornered!</title>
+	<!-- Meyer's reset -->
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+	<!-- My style sheet -->
+	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Bellefair|Montserrat|Special+Elite" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1 id="logo"><a href="https://petersurowski.github.io/Responsive-Portfolio/">peter surowski</a></h1>
+		<ul>
+			<li><a href="#">new game</a></li>
+			<li><a href="#">making of</a></li>
+			<li><a href="https://petersurowski.github.io/Responsive-Portfolio/">portfolio</a></li>
+		</ul>
+	</header>
+
+	<div id="background">
+		<div id="instructions">
+			<h1>Cornered!</h1>
+			<hr>
+			<h2>Instructions</h2>			
+			<p>You've been cornered by a horde of undead. Your only chance for survival is to fight.</p>
+			<p>Choose an opponent and use the attack button to swing your machete. You've defeated the monster when its hit points (HP) reach 0.</p>
+			<p>Watch out, they'll be attacking you back! If your HP runs out, you'll be joining their legion.</p>
+			<p><button type="button" id="continue" onclick="instructionsHider()">Start fighting!</button>
+		</div></p>
+		
+		<div id="choose" class="hidden">
+			<h2>Choose your opponent</h2>
+		</div>
+
+		<div id="first-zombie" class="hidden" onclick="fightZombie(); zombieImgAdderOne(); zombiesClickedOne();">
+		</div>
+		<div id="second-zombie" class="hidden" onclick="fightZombie(); zombieImgAdderTwo(); zombiesClickedTwo();">
+		</div>
+		<div id="third-zombie" class="hidden" onclick="fightZombie(); zombieImgAdderThree(); zombiesClickedThree();">
+		</div>
+	</div>
+
+	<div id="fight-screen" class="hidden">
+		<div id="opponent-pic"></div>
+		<div id="opponent-info"></div>
+		<hr>
+		<div id="opponent-hp"></div>
+		<div id="player-hp"></div>
+		<button type="submit" id="attack" onclick="fightButton()">ATTACK!</button>
+	</div>
+
+	<div id="game-over" class="hidden">
+		<h1>You died.</h1>
+	</div>
+
+	<div id="you-win" class="hidden">
+		<div>
+			<h1>You did it!</h1>
+			<hr>
+			<p>You sent three undead back to their graves and quickly slipped past the rest. Good work!</p>
+		</div>	
+	</div>
+	<img id="you-win-pic" class="hidden" src="assets/images/you-win-400X300.png">
+
+
+<!--Linking jQuery-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+</script>
+<!-- Linking my JavaScript -->
+<script type="text/javascript" src="assets/script/script.js"></script>
+</body>
+</html>
