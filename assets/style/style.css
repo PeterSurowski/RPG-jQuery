@@ -63,7 +63,7 @@ li a {
 	max-width: 30%;
 	padding: 1.5em;
 	left: 30%;
-	margin-top: 0em;
+	
 }
 
 #instructions h1 {
@@ -102,6 +102,7 @@ li a {
 	width: 243px;
 	position: relative;
 	float: left;
+	margin: 5em 0 0 2em;
 }
 
 #first-zombie:hover {
@@ -114,6 +115,7 @@ li a {
 	width: 464px;
 	position: relative;
 	float: left;
+	margin: 5em 0 0 2em;
 }
 
 #second-zombie:hover {
@@ -127,6 +129,7 @@ li a {
 	width: 214px;
 	position: relative;
 	float: left;
+	margin: 5em 0 0 2em;
 }
 
 #third-zombie:hover {
@@ -136,13 +139,13 @@ li a {
 .hidden {
 	transition: opacity 2s ease;
 	opacity: 0;
-	float: left;
+	
 }
 
 .unhidden {
 	transition: opacity 2s ease;
 	opacity: 1;
-	margin: 5em 0 0 2em;
+	
 }
 
 #choose {
@@ -154,6 +157,7 @@ li a {
 	left: 7em;
 	top: -4em;
 	float: left;
+	margin: 5em 0 0 2em;
 }
 
 #fight-screen {
@@ -163,6 +167,7 @@ li a {
 	color: white;
 	position: relative;
 	top: -3em;
+	margin: 5em 0 0 2em;
 }
 
 #opponent-pic {
@@ -207,10 +212,12 @@ li a {
 	color: #E9DE5D;
 	font-family: "Special Elite", sans-serif;
 	font-size: 2em;
+	margin: 4em 0 0 2em;
 }
 
 #game-over h1 {
-	margin: 3em 0 0 2em;
+	margin: 5em 0 0 2em;
+
 }
 
 #you-win {
@@ -223,8 +230,9 @@ li a {
 	margin: 0 4em 0 4em;
 }
 
-#you-win img {
-	top: 10em;
+#you-win-pic {
+	position: relative;
+	top: 5em;
 }
 
 #you-win h1 p {	

@@ -67,12 +67,17 @@ function zombiesClickedThree() {
 }
 
 function fightZombie() {
+	$('#background').removeClass('unhidden');
 	//Hides background and animates it down.
 	$('#background').addClass('background-fade background-mover');
 	//Reveals fight screen.
 	setTimeout(function() {
 		$('#background').hide();
-		$('#fight-screen').show().removeClass('hidden').toggleClass('unhidden');
+		$('#fight-screen').show();
+		//Doing a setTimeout as a bug fix
+		setTimeout(function() {
+			$('#fight-screen').removeClass('hidden').toggleClass('unhidden');
+		}, 5);	
 	}, 1000);
 }
 
@@ -85,26 +90,26 @@ function fightButton() {
 		$('#opponent-pic').removeClass('overlay');
 	}, 50);
 	//Takes some HP from opponent.
-	ranNumPlayer = Math.floor((Math.random() * 10) + 10);
+	ranNumPlayer = Math.floor((Math.random() * 10) + 60);
 	currentOpponent = currentOpponent - ranNumPlayer;
 	$('#opponent-hp').html('<h3 id="hp"><b>Enemy HP :  </b>' + currentOpponent + '</h3>');
-	//If opponent HP reaches 0, return to "choose" screen.
+	//If opponent HP reaches 0, following code returns player to "choose" screen.
 	if (currentOpponent <= 0) {
 		//Sets opponent HP to 0.
 		$('#opponent-hp').html('<h3 id="hp"><b>Enemy HP :  0</b></h3>');
 		//Triggers animation to move fight screen down and fade away.
-		$('#fight-screen').toggleClass('unhidden background-fade background-mover');
+		$('#fight-screen').toggleClass('unhidden hidden');
 		//If you've clicked three zombies at this point it ends the game in a you-win screen.
 		if (zombiesClicked.length >= 3) {
-			//display = 'none' the game-over screen, which would otherwise interfere with presentation.
-			$('#game-over').hide();
+			//display = 'none' the game-over and fight screens, which would otherwise interfere with presentation.
+			$('#game-over').hide();			
 			//This is to prevent the background div from reappearing.
 			$('#background').hide();
 			//Wait for the fight-screen animation and fade out to finish, then display 'none' it.
 			setTimeout(function() {
-				$('#fight-screen').show();
+				$('#fight-screen').hide();
 				$('#you-win').show();
-			}, 2050);
+			}, 2000);
 				//Then wait for all the above stuff to finish and unhide you-win and you-win-pic.
 			setTimeout(function() {
 				$('#you-win').toggleClass('unhidden');
@@ -113,15 +118,16 @@ function fightButton() {
 			//This ends the game.
 			return;		
 		}		
-		//Causes choose screen to change states to visible after the attack screen goes away.
+		//Causes background to change states to visible after the attack screen goes away.
 		setTimeout(function() {
 			$('#background').show();
-			$('#background').toggleClass('background-fade background-mover');
+			//Turns toggles background-fade and background-mover off.
 			$('#fight-screen').hide();
+			$('#background').toggleClass('background-fade background-mover');
 			//Makes defeated opponent disappear from choose screen. (setTimeout is a bug fix.)
 			setTimeout(function() {
 				//Toggles backgrond-fade and background-mover back off.
-				$('#fight-screen').toggleClass('background-fade background-mover');
+				//$('#fight-screen').toggleClass('background-mover');
 				$('#background').addClass('unhidden');
 				if (zombiesClicked[0] === '1' || zombiesClicked[1] === '1' || zombiesClicked[2] === '1') {
 					$('#first-zombie').css('visibility', 'hidden');
@@ -158,14 +164,16 @@ function fightButton() {
 			$('#player-hp').html('<h3 id="hp"><b>Your HP :  0</b></h3>');
 			//Waits a moment, then triggers animation to move fight screen down.
 			setTimeout(function() {
-				$('#fight-screen').toggleClass('background-fade background-mover');
+				$('#fight-screen').toggleClass('unhidden hidden');
 				//Sets game over screen's display to block instead of none.
 				$('#game-over').show();
 				//Waits about two secs, then shows game over screen.
 				setTimeout(function() {					
 					$('#game-over').addClass('unhidden');
-					$('#fight-screen', '#choose', '#background').hide();
-				}, 2005)
+					$('#fight-screen').hide();
+					$('#choose').hide();
+					$('#background').hide();
+					}, 2005)
 			}, 1000);
 		}
 	}, 1000);
