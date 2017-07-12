@@ -90,7 +90,7 @@ function fightButton() {
 		$('#opponent-pic').removeClass('overlay');
 	}, 50);
 	//Takes some HP from opponent.
-	ranNumPlayer = Math.floor((Math.random() * 10) + 60);
+	ranNumPlayer = Math.floor((Math.random() * 10) + 10);
 	currentOpponent = currentOpponent - ranNumPlayer;
 	$('#opponent-hp').html('<h3 id="hp"><b>Enemy HP :  </b>' + currentOpponent + '</h3>');
 	//If opponent HP reaches 0, following code returns player to "choose" screen.
