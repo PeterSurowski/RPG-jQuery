@@ -71,6 +71,7 @@ li a {
 	font-family: "Special Elite", sans-serif;
 	margin: .5em;
 	text-align: center;
+	line-height: 1.5em
 }
 
 #instructions h2 {
@@ -138,14 +139,12 @@ li a {
 
 .hidden {
 	transition: opacity 2s ease;
-	opacity: 0;
-	
+	opacity: 0;	
 }
 
 .unhidden {
 	transition: opacity 2s ease;
-	opacity: 1;
-	
+	opacity: 1;	
 }
 
 #choose {
@@ -250,4 +249,9 @@ li a {
 #you-win p {
 	font-family: "Montserrat", sans-serif;
 	font-size: 1.5em;
+}
+
+#peter-pic {
+	padding: 0 1em;
+	width: 90%;
 }
