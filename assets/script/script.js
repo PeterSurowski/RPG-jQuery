@@ -32,7 +32,7 @@ function zombieImgAdderOne() {
 
 function zombieImgAdderTwo() {
 	$('#opponent-pic').html('<img src="assets/images/zombie-two-355X464.png">');
-	$('#opponent-info').html('<p id="description"><b>Description:</b> Somehow his dead eyes seem to seeth with anger. He is strong and fast, but the strength of his attacks is erratic.</p><p id="difficulty"><b>Difficulty:</b> Hard</p>');
+	$('#opponent-info').html('<p id="description"><b>Description:</b> Somehow his dead eyes seem to seethe with anger. He is strong and fast, but the strength of his attacks is erratic.</p><p id="difficulty"><b>Difficulty:</b> Hard</p>');
 	$('#opponent-hp').html('<h3 id="hp"><b>Enemy HP :  </b>' + opponentTwoHp + '</h3>');
 	$('#player-hp').html('<h3 id="playerhp"><b>Your HP :  </b>' + playerHp + '</h3>');
 }
